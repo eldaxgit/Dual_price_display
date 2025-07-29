@@ -1,6 +1,6 @@
 <?php
 
-// Showing price in Euro next to Bulgarian lev
+// Showing price in EUR next to BGN
 add_filter('woocommerce_get_price_html', 'add_euro_discount_prices', 100, 2);
 
 function add_euro_discount_prices($price_html, $product) {
@@ -13,14 +13,14 @@ function add_euro_discount_prices($price_html, $product) {
         $regular_euro = number_format($regular_price / $euro_rate, 2);
         $sale_euro = number_format($sale_price / $euro_rate, 2);
 
-        $price_html .= '<br><span style="font-size: 100%; color: #777;">';
+        $price_html .= '<br><span style="font-size: 100%;">';
         $price_html .= '<del>' . $regular_euro . ' €</del> ';
         $price_html .= '<strong>' . $sale_euro . ' €</strong>';
         $price_html .= '</span>';
     } else {
         $price = $product->get_price();
         $euro_price = number_format($price / $euro_rate, 2);
-        $price_html .= '<br><span style="font-size: 100%; color: #777;">' . $euro_price . ' €</span>';
+        $price_html .= '<br><span style="font-size: 100%;">' . $euro_price . ' €</span>';
     }
 
     return $price_html;
@@ -145,7 +145,7 @@ function add_euro_to_cart_subtotal($subtotal_html) {
     $subtotal = WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax();
     $euro = number_format($subtotal / $euro_rate, 2);
 
-    return $subtotal_html . '<br><span class="euro-subtotal" style="color:#777; font-size:0.95em;">(' . $euro . ' €)</span>';
+    return $subtotal_html . '<span class="euro-subtotal" style="font-size:1em;"> / ' . $euro . ' €</span>';
 }
 
 
@@ -169,7 +169,7 @@ function add_euro_total_to_cart_only($value) {
     $grand_total = $cart->get_cart_contents_total() + $cart->get_shipping_total() + $cart->get_fee_total() + $cart->get_total_tax();
     $euro_total = number_format($grand_total / 1.95583, 2);
 
-    $value .= '<br><span class="euro-cart-total"><strong>(' . $euro_total . ' €)</strong></span>';
+    $value .= '<span class="euro-cart-total"><strong> / ' . $euro_total . ' €</strong></span>';
 
     return $value;
 }
@@ -193,9 +193,9 @@ function add_euro_shipping_and_total_display() {
                     const totalVal = parsePrice(totalEl.text());
                     const euroTotal = (totalVal / euroRate).toFixed(2);
                     if (!$('.euro-grand-total').length) {
-                        totalEl.after('<br><span class="euro-grand-total"><strong>(' + euroTotal + ' €)</strong></span>');
+                        totalEl.after('<span class="euro-grand-total"><strong>(' + euroTotal + ' €)</strong></span>');
                     } else {
-                        $('.euro-grand-total strong').text('(' + euroTotal + ' €)');
+                        $('.euro-grand-total strong').text(' / ' + euroTotal + ' €');
                     }
                 }
 
@@ -214,9 +214,9 @@ function add_euro_shipping_and_total_display() {
                     const euroShipping = (shippingVal / euroRate).toFixed(2);
 
                     if (!shippingRow.find('.euro-shipping').length) {
-                        shippingEl.after('<br><span class="euro-shipping"><strong>(' + euroShipping + ' €)</strong></span>');
+                        shippingEl.after('<span class="euro-shipping"><strong>(' + euroShipping + ' €)</strong></span>');
                     } else {
-                        shippingRow.find('.euro-shipping strong').text('(' + euroShipping + ' €)');
+                        shippingRow.find('.euro-shipping strong').text(' / ' + euroShipping + ' €');
                     }
                 }
             }
