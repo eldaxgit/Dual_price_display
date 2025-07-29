@@ -9,7 +9,11 @@ Show prices in Euro alongside Bulgarian lev for WooCommerce shops — in line wi
 - Applies on the frontend: product pages, cart, checkout, order confirmation emails, and account order overview
 - Works with the [Speedy And Econt Shipping](https://wordpress.org/support/plugin/speedy-econt-shipping/) plugin.
 
-![Product prices](images/product.png), ![Cart prices](images/cart.png), ![Checkout](images/checkout.png)
+## Screenshots
+
+![Product prices](images/product.png)
+![Cart prices](images/cart.png)
+![Checkout](images/checkout.png)
 
 ## Installation
 
