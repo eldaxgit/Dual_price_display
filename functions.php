@@ -126,7 +126,7 @@ function show_coupon_item_subtotal_discount_conditional_with_euro_classes( $subt
         $euro_total = number_format( $line_total_with_tax / $euro_rate, 2 );
 
         $subtotal = sprintf(
-            '%s<br><span class="subtotal-euro-text">(%s €)</span>',
+            '%s<span class="subtotal-euro-text"> / %s €</span>',
             wc_price( $line_total_with_tax ),
             $euro_total
         );
