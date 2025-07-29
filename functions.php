@@ -164,10 +164,10 @@ function add_euro_to_coupon_discount($discount_html, $coupon) {
 add_filter('woocommerce_cart_totals_order_total_html', 'add_euro_total_to_cart_only', 100);
 function add_euro_total_to_cart_only($value) {
     if (!is_cart()) return $value;
-
+    $euro_rate = 1.95583;
     $cart = WC()->cart;
     $grand_total = $cart->get_cart_contents_total() + $cart->get_shipping_total() + $cart->get_fee_total() + $cart->get_total_tax();
-    $euro_total = number_format($grand_total / 1.95583, 2);
+    $euro_total = number_format($grand_total / $euro_rate, 2);
 
     $value .= '<span class="euro-cart-total"><strong> / ' . $euro_total . ' €</strong></span>';
 
