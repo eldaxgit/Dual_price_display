@@ -31,5 +31,5 @@ $exchange_rate = 1.95583;
 
 ## License
 
-Open source under the MIT License — feel free to use, share, and improve it
+Open source under the MIT License — feel free to use, share, and improve it.
 Built with the help of AI to support shop owners and developers ahead of Bulgaria's Eurozone transition ✨
