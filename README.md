@@ -6,8 +6,8 @@ Show prices in Euro alongside Bulgarian lev for WooCommerce shops — in line wi
 
 - Displays prices in EUR alongside BGN
 - Uses the official fixed exchange rate (1.95583 BGN/EUR)
-- Applies on the frontend: product pages, cart, checkout, order confirmation emails, and account order overview
-- Works with the [Speedy And Econt Shipping](https://wordpress.org/support/plugin/speedy-econt-shipping/) plugin.
+- Applies to product pages, cart, checkout, customer accounts, and emails
+- Compatible with [Speedy And Econt Shipping](https://wordpress.org/support/plugin/speedy-econt-shipping/) plugin
 
 ## Screenshots
 
